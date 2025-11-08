@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "title": "Zabij 10 wilków",
+    "objective": "kill:wolf:10",
+    "reward": { 
+      "exp": 150, 
+      "item": "miecz_zelazny" 
+    }
+  }
+]
