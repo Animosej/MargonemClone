@@ -34,7 +34,7 @@ private:
     std::mutex entityMutex;
 
 public:
-    Game() : window(sf::VideoMode(1024, 768), "Margonem Clone", sf::Style::Fullscreen) {
+    Game() : window(sf::VideoMode(1024, 768), "Margonem Clone", sf::Style::Default) {
         window.setFramerateLimit(60);
         camera.setSize(1024, 768);
         loadAssets();
@@ -115,6 +115,7 @@ public:
             sf::Event e;
             while (window.pollEvent(e)) {
                 if (e.type == sf::Event::Closed) window.close();
+                if (e.type == sf::Event::KeyPressed && e.key.code == sf::Keyboard::Escape) window.close();
             }
             float dt = clock.restart().asSeconds();
             update(dt);
